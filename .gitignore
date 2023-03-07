@@ -1,0 +1,6 @@
+src/server/asset/*
+!src/server/asset/json
+src/server/temp/*
+!src/server/temp/blank
+src/server/plugin/*
+!src/server/plugin/blank

@@ -1,0 +1,44 @@
+@media all {
+  .flex {
+    display: flex;
+  }
+  .flex-direction-column {
+    flex-direction: column;
+  }
+  .align-items-center {
+    align-items: center;
+  }
+  .justify-content-space-between {
+    justify-content: space-between;
+  }
+  .justify-content-center {
+    justify-content: center;
+  }
+}
+@media all {
+  .color-red {
+    color: firebrick;
+  }
+  .color-green {
+    color: darkgreen;
+  }
+  .color-white {
+    color: white;
+  }
+}
+@media all {
+  .button {
+    padding: 8px 10px;
+    background: none;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+@media all {
+  .width100 {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=common.css.map */

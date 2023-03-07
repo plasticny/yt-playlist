@@ -1,0 +1,17 @@
+{
+  "name": "ytplaylist",
+  "version": "1.0.0",
+  "description": "npm init\r npm install",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "sass --watch src/web/scss:src/web/css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.3.0",
+    "express": "^4.18.2",
+    "sass": "^1.58.3",
+    "uuid": "^9.0.0"
+  }
+}
