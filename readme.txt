@@ -12,6 +12,9 @@
 
 裝好node js，執行run.bat，去localhost:8888就用到
 
+裝好Python還有pytube package
+    pip install pytube
+
 有用到ffmpeg和yt-dlp
 但github不給上傳，貌似是執行檔過大，所以要自己下載好放在src/server/plugin
 ffmpeg: https://ffmpeg.org/download.html
@@ -20,4 +23,5 @@ yt-dlp: https://github.com/yt-dlp
 
 -------------------------------
 
+pytube用來拿playlist的資料
 yt-dlp是個不錯用的youtube影片下載器

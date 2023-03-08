@@ -15,6 +15,7 @@ class Router {
         this.#setPageRouting();
         this.#setJsRouting();
         this.#setCssRouting();
+        this.#setComponentRouting();
         this.#setAssetRouting();
     }
 
@@ -40,13 +41,27 @@ class Router {
 
     static #setJsRouting() {
         this.#addRoute("/script/index.js", this.webRoot+"/script/index.js");
-        this.#addRoute("/script/AjaxCommon", this.webRoot+"/script/AjaxCommon.js");
+        this.#addRoute("*/AjaxCommon", this.webRoot+"/script/AjaxCommon.js");
     }
 
     static #setCssRouting() {        
         this.#addRoute("/css/index.css", this.webRoot+"/css/index/index.css");
         this.#addRoute("/css/index.css.map", this.webRoot+"/css/index/index.css.map");
     }
+
+
+    static #setComponentRouting() {
+        this.#addRoute("*/component/ComponentCore.js", this.webRoot+"/component/ComponentCore.js");
+
+        this.#addComponentRouting("MusicPlayer");
+    }
+
+    static #addComponentRouting(name) {
+        this.#addRoute("*/component/"+name+".js", this.webRoot+"/component/"+name+"/"+name+".js");
+        this.#addRoute("*/component/"+name+".html", this.webRoot+"/component/"+name+"/"+name+".html");
+        this.#addRoute("*/component/"+name+".css", this.webRoot+"/css/component/"+name+"/"+name+".css");
+    }
+
 
     static #setAssetRouting() {
         this.#addRoute("/asset/*", (req) => { return this.webRoot+req.path });

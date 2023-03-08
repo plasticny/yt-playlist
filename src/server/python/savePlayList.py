@@ -7,7 +7,7 @@ import sys
 def run(url):
     PLAYLISTJSON_FOLDER_PATH = f"{Path().absolute()}/src/server/asset/json"
 
-    # read playlist
+    # read playlist    
     ls = Playlist(url)
 
     urls = ls.video_urls
@@ -37,7 +37,7 @@ def run(url):
     index = None
     with open(f"{PLAYLISTJSON_FOLDER_PATH}/playListIndex.json", "r", encoding='utf8') as file:
         index = load(file)
-        
+                
     uuid = str(uuid1())
     record_id = index["next_record_id"]
     index["records"][record_id] = {
