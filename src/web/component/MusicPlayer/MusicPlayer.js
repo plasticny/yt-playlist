@@ -67,9 +67,12 @@ export default class MusicPlayer {
 
     play() {
         if(!this.audio) { return }
+        
         this.audio.play();
-        this.$btnPlay.addClass("fa-pause")
-        this.$btnPlay.removeClass("fa-play")
+        if(!this.audio.paused) {
+            this.$btnPlay.addClass("fa-pause")
+            this.$btnPlay.removeClass("fa-play")
+        }
     }
 
     pause() {
@@ -84,7 +87,7 @@ export default class MusicPlayer {
     }
 
     async nextSong() {
-        let playList_idx = this.playlist_idx;
+        var playList_idx = this.playlist_idx;
 
         this.$tab.css({"background-image": ""})
         this.$song_title.html("")
@@ -97,10 +100,10 @@ export default class MusicPlayer {
         this.$tab.css({"background-image": `url("${song.thumbnail_url}")`})
 
         this.audio = new Audio(`audio/${song.file_nm}`)
-        try { this.play() } catch(e) { this.pause() }
+        this.play()
 
-        $(this.audio).on("ended", () => {
-            nextSong(playList_idx);
-        })
+        $(this.audio).on("ended", function(){
+            this.nextSong(playList_idx);
+        }.bind(this))
     }
 }
