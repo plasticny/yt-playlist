@@ -97,7 +97,7 @@ class PlayControllAction {
             // remove old file
             let dir = await fs.readdirSync(TEMPFOLDER_PATH);
             for(let file_nm of dir) {
-                if(file_nm != "blank") continue
+                if(file_nm == "blank") continue
                 await fs.unlinkSync(`${TEMPFOLDER_PATH}/${file_nm}`)
             }
             
