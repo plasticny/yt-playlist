@@ -1,37 +1,31 @@
 music-player {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 60%;
-  background-size: cover;
-  background-position: center;
-  background-color: black;
-}
-music-player > div {
   position: absolute;
-  bottom: 0.5rem;
-  width: calc(100% - 30px);
+}
+music-player #music-player-content {
   padding-left: 15px;
   padding-right: 15px;
+  margin-top: 12px;
+}
+music-player #thumbnail {
+  width: 80px;
+  border-radius: 5px;
 }
 music-player #progress_container {
-  height: 0.35rem;
-  margin-top: 0.5rem;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 0.15rem;
   margin-bottom: 0.3rem;
-  border-radius: 0.3rem;
-  box-shadow: 0 0 4px #767982;
-  background-color: #f0f0f0;
+  background-color: black;
 }
 music-player #progress_bar {
   height: 100%;
   width: 0%;
-  border-radius: 0.5rem;
-  background-color: #0d0d2a;
+  border-radius: 0.15rem;
+  background-color: #f0f0f0;
 }
 music-player #control > i {
   color: whitesmoke;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
   margin-left: 1.5rem;
   font-size: 1.3rem;
 }
@@ -46,10 +40,9 @@ music-player #control > i:hover {
 }
 music-player #song_title {
   font-family: genseki;
-  margin-top: 0.5rem;
   margin-left: 1.5rem;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
   letter-spacing: 3px;
 }

@@ -12,7 +12,7 @@ export default function index() {
 
     async function construct() {
         let playList_index = await AjaxCommon.get("/action/getPlayListDir")
-        let playlist_idx = playList_index[1].index
+        let playlist_idx = playList_index[0].index
         let playList = await AjaxCommon.get("/action/getPlayList", {idx:playlist_idx})
 
         // init the player

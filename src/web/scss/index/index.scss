@@ -5,3 +5,14 @@ body {
     background-color: #1d1e24;
     margin: 0;
 }
+
+music-player {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 80px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(13 13 13);
+}

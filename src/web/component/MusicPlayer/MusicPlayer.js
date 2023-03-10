@@ -15,6 +15,7 @@ export default class MusicPlayer {
     $progress_bar;
     $song_title;
     $player;
+    $thumbnail;
 
     // attribute
     playlist_idx = undefined;
@@ -41,6 +42,7 @@ export default class MusicPlayer {
         this.$btnNextSong = this.$tab.find("#btnNextSong")
         this.$progress_bar = this.$tab.find("#progress_bar")
         this.$song_title = this.$tab.find("#song_title")
+        this.$thumbnail = this.$tab.find("#thumbnail");
 
         // progress bar
         setInterval(function(){
@@ -97,7 +99,8 @@ export default class MusicPlayer {
 
         this.$song_title.html(song.title)
         $("title").html(song.title)
-        this.$tab.css({"background-image": `url("${song.thumbnail_url}")`})
+        // this.$tab.css({"background-image": `url("${song.thumbnail_url}")`})
+        this.$thumbnail.prop("src", song.thumbnail_url)
 
         this.audio = new Audio(`audio/${song.file_nm}`)
         this.play()
