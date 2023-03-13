@@ -50,6 +50,27 @@ class PlayControllAction {
         res.send(this.#playList_dict[idx].playlist)
     }
 
+    // load the playlist data into memory
+    static #loadPlayList(idx) {
+        // playList_info : { title, url, json_file }
+        let playList_info = this.#playList_index[idx]
+        const playList_json =  fs.readFileSync(this.#jsonFolder_path+"/"+playList_info.json_file+".json")
+        let playlist = JSON.parse(playList_json).records;
+
+        // queue the playlist
+        let playlist_queue = [];
+        for(let [song_key, song_info] of Object.entries(playlist)) {
+            playlist_queue.push([song_key, song_info.latest_play]);
+        }
+        playlist_queue = playlist_queue.sort((a,b) => { return a[1] - b[1]; });
+
+        // save playlist info into memory
+        this.#playList_dict[idx] = new Object();
+        this.#playList_dict[idx].playlist = playlist;
+        this.#playList_dict[idx].queue = playlist_queue;
+    }
+    
+
     // query: {playList_idx}
     static async #nextSong(req, res) {
         const playList_idx = req.query.playList_idx;
@@ -69,6 +90,8 @@ class PlayControllAction {
             playlist.queue[idx] = playlist.queue[idx-1]
         }
         
+
+
         let time = new Date().getTime()
         item.latest_play = time
         
@@ -89,7 +112,6 @@ class PlayControllAction {
     }
 
 
-
     static #downloadAudio(url) {
         return new Promise(async function(resolve) {
             const TEMPFOLDER_PATH = `${Router.serverRoot}/temp`
@@ -108,26 +130,6 @@ class PlayControllAction {
             await execFileSync(EXEPATH, PARAMETER.split(' '))
             resolve(file_nm)
         })
-    }
-
-    // load the playlist data into memory
-    static #loadPlayList(idx) {
-        // playList_info : { title, url, json_file }
-        let playList_info = this.#playList_index[idx]
-        const playList_json =  fs.readFileSync(this.#jsonFolder_path+"/"+playList_info.json_file+".json")
-        let playlist = JSON.parse(playList_json).records;
-
-        // queue the playlist
-        let playlist_queue = [];
-        for(let [song_key, song_info] of Object.entries(playlist)) {
-            playlist_queue.push([song_key, song_info.latest_play]);
-        }
-        playlist_queue = playlist_queue.sort((a,b) => { return a[1] - b[1]; });
-
-        // save playlist info into memory
-        this.#playList_dict[idx] = new Object();
-        this.#playList_dict[idx].playlist = playlist;
-        this.#playList_dict[idx].queue = playlist_queue;
     }
 }
 
