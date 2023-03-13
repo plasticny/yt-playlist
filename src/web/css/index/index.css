@@ -53,12 +53,14 @@ music-player {
   width: 100%;
   background-size: cover;
   background-position: center;
-  background-color: rgb(13, 13, 13);
+  background-color: rgb(21, 21, 26);
 }
 
 playlist-index {
   height: 100%;
   width: 300px;
+  max-width: 30%;
+  background: black;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -2,22 +2,6 @@ music-player {
   display: block;
   overflow-y: hidden;
 }
-music-player #music-player-content {
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-top: 12px;
-}
-music-player #music-player-content01 {
-  width: calc(100% - 210px);
-  margin-top: 9px;
-}
-music-player #thumbnail {
-  width: 80px;
-  border-radius: 5px;
-  position: absolute;
-  left: 20px;
-  top: 12px;
-}
 music-player #progress_container {
   position: absolute;
   width: 100%;
@@ -26,37 +10,58 @@ music-player #progress_container {
   margin-bottom: 0.3rem;
   background-color: black;
 }
-music-player #progress_bar {
+music-player #progress_container #progress_bar {
   height: 100%;
   width: 0%;
   border-radius: 0.15rem;
   background-color: #f0f0f0;
 }
-music-player #control > i {
+music-player #music-player-content {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 12px;
+}
+music-player #music-player-content #thumbnail {
+  width: 80px;
+  border-radius: 5px;
+  position: absolute;
+  left: 20px;
+  top: 12px;
+}
+music-player #music-player-content #music-player-content01 {
+  width: calc(100% - 210px);
+  margin-top: 9px;
+}
+music-player #music-player-content #music-player-content01 #control > i {
   color: whitesmoke;
 }
-music-player #control > i#btnPlay {
+music-player #music-player-content #music-player-content01 #control > i#btnPlay {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   font-size: 1.3rem;
 }
-music-player #control > i:hover {
+music-player #music-player-content #music-player-content01 #control > i:hover {
   cursor: pointer;
 }
-@font-face {
-  music-player {
-    font-family: genseki;
-    src: url("font/genseki");
-  }
-}
-music-player #song_title {
+music-player #music-player-content #music-player-content01 #song_title {
   font-family: genseki;
-  margin-left: 1.5rem;
   color: white;
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 2px;
   margin-top: 5px;
+  height: 20px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+@font-face {
+  music-player #music-player-content #music-player-content01 #song_title {
+    font-family: genseki;
+    src: url("font/genseki.tff");
+  }
 }
 
 /*# sourceMappingURL=MusicPlayer.css.map */

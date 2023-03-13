@@ -6,17 +6,26 @@ playlist-index {
 playlist-index .playlist-block {
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 15px 0px;
+  border-top: 1px solid rgba(245, 245, 245, 0.4588235294);
+  border-bottom: 1px solid rgba(245, 245, 245, 0.4588235294);
+}
+playlist-index .playlist-block:hover {
+  cursor: pointer;
 }
 playlist-index .playlist-block .playlist-name {
   font-family: genseki;
   color: white;
   font-weight: bold;
   letter-spacing: 2px;
+  text-align: center;
 }
 @font-face {
   playlist-index .playlist-block .playlist-name {
     font-family: genseki;
-    src: url("font/genseki");
+    src: url("font/genseki.ttf");
   }
 }
 

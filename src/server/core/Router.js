@@ -66,7 +66,7 @@ class Router {
 
     static #setAssetRouting() {
         this.#addRoute("/asset/*", (req) => { return this.webRoot+req.path });
-        this.#addRoute("/css/font/*", (req) => { return `${this.webRoot}/asset/font/${req.params[0]}.ttf` });
+        this.#addRoute("/css/font/*", (req) => { return `${this.webRoot}/asset/font/${req.params[0]}` });
         this.#addRoute("/audio/*", (req) => { return `${this.serverRoot}/temp/${req.params[0]}.wav` });
     }
 
