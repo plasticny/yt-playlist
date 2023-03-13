@@ -22,9 +22,8 @@ export default class MusicPlayer {
     audio = undefined;
 
 
-    constructor() {}
 
-    async init(callback) {
+    async init() {
         return new Promise(async function(resolve){
             // fix
             const {$tab, tabHtml} = await loadResource(TAB, OBJ);
@@ -89,9 +88,10 @@ export default class MusicPlayer {
     }
 
     async nextSong() {
+        // need to keep this, without this will read this.playlist_idx as undefined, dont know why
         var playList_idx = this.playlist_idx;
 
-        this.$tab.css({"background-image": ""})
+        this.$thumbnail.prop("src", "")
         this.$song_title.html("")
         $("title").html("")
         
@@ -99,7 +99,6 @@ export default class MusicPlayer {
 
         this.$song_title.html(song.title)
         $("title").html(song.title)
-        // this.$tab.css({"background-image": `url("${song.thumbnail_url}")`})
         this.$thumbnail.prop("src", song.thumbnail_url)
 
         this.audio = new Audio(`audio/${song.file_nm}`)

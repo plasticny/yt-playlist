@@ -54,6 +54,7 @@ class Router {
         this.#addRoute("*/component/ComponentCore.js", this.webRoot+"/component/ComponentCore.js");
 
         this.#addComponentRouting("MusicPlayer");
+        this.#addComponentRouting("PlayListIndex");
     }
 
     static #addComponentRouting(name) {

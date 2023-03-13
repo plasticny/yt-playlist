@@ -1,0 +1,23 @@
+playlist-index {
+  display: block;
+  padding: 20px 0px;
+  height: calc(100% - 123px);
+}
+playlist-index .playlist-block {
+  display: flex;
+  flex-direction: column;
+}
+playlist-index .playlist-block .playlist-name {
+  font-family: genseki;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+@font-face {
+  playlist-index .playlist-block .playlist-name {
+    font-family: genseki;
+    src: url("font/genseki");
+  }
+}
+
+/*# sourceMappingURL=PlayListIndex.css.map */

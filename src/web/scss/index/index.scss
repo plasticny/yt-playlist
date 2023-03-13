@@ -7,12 +7,16 @@ body {
 }
 
 music-player {
-    display: block;
     position: absolute;
     bottom: 0;
-    height: 80px;
+    height: 83px;
     width: 100%;
     background-size: cover;
     background-position: center;
     background-color: rgb(13 13 13);
+}
+
+playlist-index {
+    height: 100%;
+    width: 300px;
 }
